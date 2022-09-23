@@ -4,7 +4,7 @@
     left: 0;
     top: 0;
     bottom: 0;
-    background-color: #ffffff;
+    background-color: #fff;
     box-shadow: 1px 5px 10px #d1d1d1;
     z-index: 1;
 }
@@ -41,5 +41,13 @@
 .sidebar .navigation ul li:hover a,
 .sidebar .navigation ul li:active a,
 .sidebar .navigation ul li:focus a {
+    color: #fff;
+}
+
+.sidebar .navigation ul li.active {
+    background-color: #333;
+}
+
+.sidebar .navigation ul li.active a {
     color: #fff;
 }
