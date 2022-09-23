@@ -12,11 +12,11 @@ const routes: Routes = [
     loadChildren: () => import('./summary/summary.module').then(m => m.SummaryModule)
   },
   {
-    path: 'summary',
+    path: 'country',
     loadChildren: () => import('./country/country.module').then(m => m.CountryModule)
   },
   {
-    path: 'summary',
+    path: 'live',
     loadChildren: () => import('./live/live.module').then(m => m.LiveModule)
   },
 ];
