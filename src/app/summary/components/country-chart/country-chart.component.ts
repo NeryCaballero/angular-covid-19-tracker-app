@@ -13,9 +13,10 @@ export class CountryChartComponent implements OnInit, OnChanges {
   @Input() country: string = 'Panama';
 
   barChartData: ChartDataSets[] = [{
-    data: [64, 59, 80]
+    data: [],
+    label: "Confirmed Cases"
   }];
-  barChartLabels: Label[] = ['USA', 'PAN', 'BE'];
+  barChartLabels: Label[] = [];
   barChartOptions: ChartOptions = {
     responsive: true
   };
@@ -33,10 +34,12 @@ export class CountryChartComponent implements OnInit, OnChanges {
   }
 
   getCountryData() {
-    this.dataService.getCountryDataByDate(this.country, 'from=2020-03-01T00:00:00Z&to=2020-04-01T00:00:00Z')
+    this.dataService.getCountryDataByDate(this.country, 'from=2021-01-01T00:00:00Z&to=2021-12-31T00:00:00Z')
     .subscribe(
       (response: any) => {
         console.log('Response', response);
+        this.barChartData[0].data = response.map((obj: any)=>obj['Cases']);
+        this.barChartLabels = response.map((obj: any)=> obj['Date']);
       }
     );
   }
