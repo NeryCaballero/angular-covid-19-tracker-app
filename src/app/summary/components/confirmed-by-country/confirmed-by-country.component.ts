@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-confirmed-by-country',
@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConfirmedByCountryComponent implements OnInit {
 
+  @Output() countryToSearch = new EventEmitter<string>();
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  passCountryData(searchTerm: string) {
+    this.countryToSearch.emit(searchTerm);
+  }
+
 }
+

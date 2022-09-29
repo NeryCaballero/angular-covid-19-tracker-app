@@ -8,6 +8,7 @@ import { DataService } from 'src/app/shared/services/data.service';
 })
 export class SummaryPageComponent implements OnInit {
   covidData: any = {};
+  countryToSearch: string = '';
 
   constructor(private dataService: DataService) { }
 
@@ -21,4 +22,10 @@ export class SummaryPageComponent implements OnInit {
     )
   }
 
+  searchCountry(searchTerm: string) {
+    this.countryToSearch = searchTerm;
+  }
+
 }
+
+
