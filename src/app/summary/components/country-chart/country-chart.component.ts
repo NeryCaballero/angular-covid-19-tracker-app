@@ -1,6 +1,7 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { ChartDataSets, ChartOptions, ChartType } from 'chart.js';
 import { Label } from 'ng2-charts';
+import { DataService } from 'src/app/shared/services/data.service';
 
 @Component({
   selector: 'app-country-chart',
@@ -22,13 +23,22 @@ export class CountryChartComponent implements OnInit, OnChanges {
   barChartLegend = true;
   barChartPlugins = [];
 
-  constructor() { }
+  constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
   }
 
   ngOnChanges(): void {
-    console.log(this.country);
+    this.getCountryData();
+  }
+
+  getCountryData() {
+    this.dataService.getCountryDataByDate(this.country, 'from=2020-03-01T00:00:00Z&to=2020-04-01T00:00:00Z')
+    .subscribe(
+      (response: any) => {
+        console.log('Response', response);
+      }
+    );
   }
 
 }
