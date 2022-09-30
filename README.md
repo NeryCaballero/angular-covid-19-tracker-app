@@ -1,12 +1,42 @@
+# Angular Covid 19 Tracker App
 
-Input()
-onChanges() - hook
-pipes : number
+Single page application, that communicates with a [COVID-19 API](https://documenter.getpostman.com/view/10808728/SzS8rjbc), gets and presents the data to the user in 3 ways:
+1. SUMMARY:
+- Presents total numbers for the entire world.
+- Top 5 countries in 3 categories
+    - Total Cases
+    - Total Deaths
+    - Total Recoveries
+- Confirmed cases by country per day.
 
+2. BY COUNTRY:
+- Presents a full list of all the countries, includes a search functionality to look into an specific country.
 
-# CovidTrackerApp
+3. LIVE:
+- Presents an interactive map that displays the number of confirmed cases per country.
+
+This project is part of a intensive course that covers from setup to deployment of an Angular Application.
+
+Topics covered:
+- Angular Basics, Setup and How to Use it.
+- Modules, Components, Life Cycle Hooks, Routes, Lazy Loading
+- Routing, HTTP Module, Services.
+- RxJS, Subscriptions, Observables, Subjects.
+- 3rd Party Packages: Bootstrap, Chart JS, Highcharts.
+- Creating Search Functionality
+- Working with Tables, Form Fields, GET HTTP Calls, pipes.
+- How to Work with an API and real data.
+- How to Share Data in Angular, Input and Output, Event Emitters.
+- Custom Events in Angular.
+- Build the Project for Deployment.
+- Creating a Project on Firebase.
+- Connecting a Project to a Firebase Project.
+- Deploying The App to Firebase Hosting.
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.3.
+
+
 
 ## Development server
 
