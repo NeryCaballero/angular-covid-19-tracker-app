@@ -1,4 +1,6 @@
+<h4 class="row mt-5 justify-content-center">Global Data</h4>
 <app-summary-cards [covidData]="covidData"></app-summary-cards>
+<h4 class="row mt-5 justify-content-center mb-4">Top 5 Countries</h4>
 <app-top-countries [covidData]="covidData"></app-top-countries>
 <app-confirmed-by-country (countryToSearch)="searchCountry($event)"></app-confirmed-by-country>
 <app-country-chart [country]="countryToSearch"></app-country-chart>
